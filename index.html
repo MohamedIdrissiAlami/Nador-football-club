@@ -28,17 +28,167 @@
         <p>Select Formation</p>
         <select name="format" id="format">
           <option value="4-4-2">4-4-2</option>
-          <option value="3-4-3">3-4-3</option>
+          <option value="4-3-3">4-3-3</option>
         </select>
       </div>
     </div>
 
-    <div class="stadium">
-      <div class="forward-line" id="attack-line"></div>
+
+
+
+    <!-- <div style="display:flex;justify-content:center;gap:50px"> -->
+      <div style="display: flex; justify-content: space-between; width: 100%;">
+        <style>
+          .add-form {
+            padding: 10px;
+            border:solid 1px hsl(0, 0%, 70%);
+            box-shadow: 3px 3px 10px hsl(0, 0%, 70%);
+            border-radius: 15px;
+            background-color: hsl(0, 0%, 95%);
+          }
+
+          .input-container{
+              display: flex;
+              justify-content: space-between;
+              margin: 10px 0;
+          }
+
+          input{
+                border-radius: 8px;
+                border:solid 1px hsl(0, 0%, 70%);
+                box-shadow: 3px 3px 3px hsl(0, 0%, 70%);
+          }
+
+          #select-player-position{
+            width: 50%;
+            height: 25px;
+            margin: 10px 25%;
+            border-radius: 6px;
+            text-align: center;
+          }
+
+        </style>
+
+      <div class="add-form" style="width: 40%; display: none;">
+        <div class="input-container">
+          <label for="p-name">enter player name: </label>
+          <input type="text" id="p-name">
+        </div>
+        <div class="input-container">
+          <label for="p-picture">enter player picture URL: </label>
+          <input type="text" id="p-picture">
+        </div>
+        <div class="input-container">
+          <label for="nationality">enter player nationality: </label>
+          <input type="text" id="nationality">
+        </div>
+        <div class="input-container">
+          <label for="flag">enter player flag: </label>
+          <input type="text" id="flag">
+        </div>
+        <div class="input-container">
+          <label for="club">enter player club: </label>
+          <input type="text" id="club">
+        </div>
+        <div class="input-container">
+          <label for="logo">enter player logo: </label>
+          <input type="text" id="logo">
+        </div>
+
+        <select name="" id="select-player-position">
+          <option value="Default">Choose an option</option>
+          <option value="GK">GK</option>
+          <option value="ST">ST</option>
+        </select>
+ 
+        <div id="player-stats">
+          <div id="GK" style="display: none;">
+            <div class="input-container">
+              <label for="rating">enter player rating: </label>
+              <input type="text" id="rating">
+            </div>
+            <div class="input-container">
+              <label for="diving">enter player diving: </label>
+              <input type="text" id="diving">
+            </div>
+            <div class="input-container">
+              <label for="handling">enter player handling: </label>
+              <input type="text" id="handling">
+            </div>
+            <div class="input-container">
+              <label for="kicking">enter player kicking: </label>
+              <input type="text" id="kicking">
+            </div>
+            <div class="input-container">
+              <label for="reflexes">enter player reflexes: </label>
+              <input type="text" id="reflexes">
+            </div>
+            <div class="input-container">
+              <label for="speed">enter player speed: </label>
+              <input type="text" id="speed">
+            </div>
+            <div class="input-container">
+              <label for="positioning">enter player positioning: </label>
+              <input type="text" id="positioning">
+            </div>
+          </div>
+
+          <div id="Player" style="display: none;">
+            <div class="input-container">
+              <label for="rating">enter player rating: </label>
+              <input type="text" id="rating">
+            </div>
+            <div class="input-container">
+              <label for="pace">enter player pace: </label>
+              <input type="text" id="pace">
+            </div>
+            <div class="input-container">
+              <label for="shooting">enter player shooting: </label>
+              <input type="text" id="shooting">
+            </div>
+            <div class="input-container">
+              <label for="passing">enter player passing: </label>
+              <input type="text" id="passing">
+            </div>
+            <div class="input-container">
+              <label for="dribbling">enter player dribbling: </label>
+              <input type="text" id="dribbling">
+            </div>
+            <div class="input-container">
+              <label for="defending">enter player defending: </label>
+              <input type="text" id="defending">
+            </div>
+            <div class="input-container">
+              <label for="physical">enter player physical: </label>
+              <input type="text" id="physical">
+            </div>
+          </div>
+        </div>
+
+      </div>
+            <div class="stadium" style="max-width: 60%;">
+        <!-- <div class="forward-line" id="attack-line"></div>
       <div class="midfield-line" id="midfield-line"></div>
       <div class="defense-line" id="defense-line"></div>
-      <div class="goalkeeper-area" id="goal-area"></div>
+      <div class="goalkeeper-area" id="goal-area"></div> -->
+        <div class="position">1</div>
+        <div class="position">2</div>
+        <div class="position">3</div>
+        <div class="position">4</div>
+        <div class="position">5</div>
+        <div class="position">6</div>
+        <div class="position">7</div>
+        <div class="position">8</div>
+        <div class="position">9</div>
+        <div class="position">10</div>
+        <div class="position">11</div>
+      </div>
+    
+
+
     </div>
+
+
 
     <!-- Replacement Section -->
     <div class="replacement-field">
@@ -50,6 +200,8 @@
       <div class="player-card">
         <div class="player-profile">
           <div class="rating">90</div>
+          <div style="width: 24px;height: 16px;border-radius: 6px;overflow: hidden; position:absolute;bottom: 0;right:0" class="flag"><img style="width: 100%; height: 100%;" src="https://cdn.sofifa.net/flags/ar.png" alt=""></div>
+          <div style="width: 16px;height: 16px; position:absolute;top:12px;left:0" class="club-logo"><img style="width: 100%; height: 100%;" src="https://cdn.sofifa.net/meta/team/239235/120.png" alt=""></div>
           <div class="profile-img-box">
             <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="lionel Messi">
           </div>
@@ -57,154 +209,20 @@
         <div class="player-info">
           <div class="player-name">Lionel Messi</div>
           <div class="player-stats">
-            <div>PAC: 80</div>
-            <div>SHO: 87</div>
-            <div>PAS: 90</div>
-            <div>DRI: 94</div>
-            <div>DEF: 33</div>
-            <div>PHY: 64</div>
+            <div>PAC 80</div>
+            <div>SHO 87</div>
+            <div>PAS 90</div>
+            <div>DRI 94</div>
+            <div>DEF 33</div>
+            <div>PHY 64</div>
           </div>
 
         </div>
       </div>
 
       <!-- player2 -->
-      <div class="player-card">
-        <div class="player-profile">
-          <div class="rating">90</div>
-          <div class="profile-img-box">
-            <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="lionel Messi">
-          </div>
-        </div>
-        <div class="player-info">
-          <div class="player-name">Lionel Messi</div>
-          <div class="player-stats">
-            <div>PAC: 80</div>
-            <div>SHO: 87</div>
-            <div>PAS: 90</div>
-            <div>DRI: 94</div>
-            <div>DEF: 33</div>
-            <div>PHY: 64</div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- player3 -->
-      <div class="player-card">
-        <div class="player-profile">
-          <div class="rating">90</div>
-          <div class="profile-img-box">
-            <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="lionel Messi">
-          </div>
-        </div>
-        <div class="player-info">
-          <div class="player-name">Lionel Messi</div>
-          <div class="player-stats">
-            <div>PAC: 80</div>
-            <div>SHO: 87</div>
-            <div>PAS: 90</div>
-            <div>DRI: 94</div>
-            <div>DEF: 33</div>
-            <div>PHY: 64</div>
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- player4 -->
-      <div class="player-card">
-        <div class="player-profile">
-          <div class="rating">90</div>
-          <div class="profile-img-box">
-            <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="lionel Messi">
-          </div>
-        </div>
-        <div class="player-info">
-          <div class="player-name">Lionel Messi</div>
-          <div class="player-stats">
-            <div>PAC: 80</div>
-            <div>SHO: 87</div>
-            <div>PAS: 90</div>
-            <div>DRI: 94</div>
-            <div>DEF: 33</div>
-            <div>PHY: 64</div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- player5 -->
-      <div class="player-card">
-        <div class="player-profile">
-          <div class="rating">90</div>
-          <div class="profile-img-box">
-            <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="lionel Messi">
-          </div>
-        </div>
-        <div class="player-info">
-          <div class="player-name">Lionel Messi</div>
-          <div class="player-stats">
-            <div>PAC: 80</div>
-            <div>SHO: 87</div>
-            <div>PAS: 90</div>
-            <div>DRI: 94</div>
-            <div>DEF: 33</div>
-            <div>PHY: 64</div>
-          </div>
-
-        </div>
-      </div>
-
-
-      <!-- player6 -->
-      <div class="player-card">
-        <div class="player-profile">
-          <div class="rating">90</div>
-          <div class="profile-img-box">
-            <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="lionel Messi">
-          </div>
-        </div>
-        <div class="player-info">
-          <div class="player-name">Lionel Messi</div>
-          <div class="player-stats">
-            <div>PAC: 80</div>
-            <div>SHO: 87</div>
-            <div>PAS: 90</div>
-            <div>DRI: 94</div>
-            <div>DEF: 33</div>
-            <div>PHY: 64</div>
-          </div>
-
-        </div>
-      </div>
-
-
-      <!-- player7 -->
-      <div class="player-card">
-        <div class="player-profile">
-          <div class="rating">90</div>
-          <div class="profile-img-box">
-            <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="lionel Messi">
-          </div>
-        </div>
-        <div class="player-info">
-          <div class="player-name">Lionel Messi</div>
-          <div class="player-stats">
-            <div>PAC: 80</div>
-            <div>SHO: 87</div>
-            <div>PAS: 90</div>
-            <div>DRI: 94</div>
-            <div>DEF: 33</div>
-            <div>PHY: 64</div>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
   </div>
+  <script src="script.js"></script>
 </body>
 
 </html>
