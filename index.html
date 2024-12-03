@@ -98,71 +98,80 @@
         <select name="" id="select-player-position">
           <option value="Default">Choose an option</option>
           <option value="GK">GK</option>
+          <option value="LB">LB</option>
+          <option value="RB">RB</option>
+          <option value="CB">CB</option>
+          <option value="LM">LM</option>
+          <option value="RM">RM</option>
+          <option value="CM">CM</option>
+          <option value="LW">LW</option>
+          <option value="RW">RW</option>
           <option value="ST">ST</option>
         </select>
  
         <div id="player-stats">
           <div id="GK" style="display: none;">
             <div class="input-container">
-              <label for="rating">enter player rating: </label>
-              <input type="text" id="rating">
+              <label for="ratingg">enter player rating: </label>
+              <input type="number" id="ratingg">
             </div>
             <div class="input-container">
               <label for="diving">enter player diving: </label>
-              <input type="text" id="diving">
+              <input type="number" id="diving">
             </div>
             <div class="input-container">
               <label for="handling">enter player handling: </label>
-              <input type="text" id="handling">
+              <input type="number" id="handling">
             </div>
             <div class="input-container">
               <label for="kicking">enter player kicking: </label>
-              <input type="text" id="kicking">
+              <input type="number" id="kicking">
             </div>
             <div class="input-container">
               <label for="reflexes">enter player reflexes: </label>
-              <input type="text" id="reflexes">
+              <input type="number" id="reflexes">
             </div>
             <div class="input-container">
               <label for="speed">enter player speed: </label>
-              <input type="text" id="speed">
+              <input type="number" id="speed">
             </div>
             <div class="input-container">
-              <label for="positioning">enter player positioning: </label>
-              <input type="text" id="positioning">
+              <label for="number">enter player positioning: </label>
+              <input type="number" id="positioning">
             </div>
           </div>
 
           <div id="Player" style="display: none;">
             <div class="input-container">
-              <label for="rating">enter player rating: </label>
-              <input type="text" id="rating">
+              <label for="ratingp">enter player rating: </label>
+              <input type="number" id="ratingp">
             </div>
             <div class="input-container">
               <label for="pace">enter player pace: </label>
-              <input type="text" id="pace">
+              <input type="number" id="pace">
             </div>
             <div class="input-container">
               <label for="shooting">enter player shooting: </label>
-              <input type="text" id="shooting">
+              <input type="number" id="shooting">
             </div>
             <div class="input-container">
               <label for="passing">enter player passing: </label>
-              <input type="text" id="passing">
+              <input type="number" id="passing">
             </div>
             <div class="input-container">
               <label for="dribbling">enter player dribbling: </label>
-              <input type="text" id="dribbling">
+              <input type="number" id="dribbling">
             </div>
             <div class="input-container">
               <label for="defending">enter player defending: </label>
-              <input type="text" id="defending">
+              <input type="number" id="defending">
             </div>
             <div class="input-container">
               <label for="physical">enter player physical: </label>
-              <input type="text" id="physical">
+              <input type="number" id="physical" required>
             </div>
           </div>
+          <button style="width:100px ; height: 40px; text-align:center;border-radius: 8px;background-color: #0040cb;color:white; margin:20px 40%;" class="btn save-btn">Save</button>
         </div>
 
       </div>
@@ -171,7 +180,30 @@
       <div class="midfield-line" id="midfield-line"></div>
       <div class="defense-line" id="defense-line"></div>
       <div class="goalkeeper-area" id="goal-area"></div> -->
-        <div class="position">1</div>
+        <div class="position">1
+          <div class="player-card">
+            <div class="player-profile">
+              <div class="rating">90</div>
+              <div style="width: 24px;height: 16px;border-radius: 6px;overflow: hidden; position:absolute;bottom: 0;right:0" class="flag"><img style="width: 100%; height: 100%;" src="https://cdn.sofifa.net/flags/ar.png" alt=""></div>
+              <div style="width: 16px;height: 16px; position:absolute;top:12px;left:0" class="club-logo"><img style="width: 100%; height: 100%;" src="https://cdn.sofifa.net/meta/team/239235/120.png" alt=""></div>
+              <div class="profile-img-box">
+                <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="lionel Messi">
+              </div>
+            </div>
+            <div class="player-info">
+              <div class="player-name">Lionel Messi</div>
+              <div class="player-stats">
+                <div class="stat-val ">PAC 80</div>
+                <div class="stat-val ">SHO 87</div>
+                <div class="stat-val ">PAS 90</div>
+                <div class="stat-val ">DRI 94</div>
+                <div class="stat-val ">DEF 33</div>
+                <div class="stat-val ">PHY 64</div>
+              </div>
+    
+            </div>
+          </div>
+        </div>
         <div class="position">2</div>
         <div class="position">3</div>
         <div class="position">4</div>
@@ -197,7 +229,7 @@
 
       <!-- Substitute Cards will be added here -->
       <!-- player1 -->
-      <div class="player-card">
+       <!-- <div class="player-card">
         <div class="player-profile">
           <div class="rating">90</div>
           <div style="width: 24px;height: 16px;border-radius: 6px;overflow: hidden; position:absolute;bottom: 0;right:0" class="flag"><img style="width: 100%; height: 100%;" src="https://cdn.sofifa.net/flags/ar.png" alt=""></div>
@@ -209,16 +241,16 @@
         <div class="player-info">
           <div class="player-name">Lionel Messi</div>
           <div class="player-stats">
-            <div>PAC 80</div>
-            <div>SHO 87</div>
-            <div>PAS 90</div>
-            <div>DRI 94</div>
-            <div>DEF 33</div>
-            <div>PHY 64</div>
+            <div class="stat-val ">PAC 80</div>
+            <div class="stat-val ">SHO 87</div>
+            <div class="stat-val ">PAS 90</div>
+            <div class="stat-val ">DRI 94</div>
+            <div class="stat-val ">DEF 33</div>
+            <div class="stat-val ">PHY 64</div>
           </div>
 
         </div>
-      </div>
+      </div>  -->
 
       <!-- player2 -->
   </div>

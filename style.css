@@ -42,8 +42,7 @@ body {
   margin-bottom: 8px;
 }
 
-.actions select,
-.actions .btn {
+.actions select, .actions .btn {
   padding: 8px 12px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -51,7 +50,7 @@ body {
   translate: .5;
 }
 .actions .btn:hover{
-  background-color: #1d8f9e98;
+  background-color: #62797c98;
 }
 
 .stadium {
@@ -72,11 +71,12 @@ body {
   height: 50px;
   border-radius: 2px;
   position: relative;
-  background-image: url(img/badge_total_rush.webp);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position:center;
-  
+  text-align: center;
+  color: white;
+  > .player-card {
+    transform: scale(0.5) translate(-59%, -105%);
+  }
+  transition: all 0.5s;
 }
 
 
