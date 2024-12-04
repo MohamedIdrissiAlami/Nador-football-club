@@ -1,47 +1,3 @@
-//EDIT:
-
-// function EditPlayer() {
-//   let arbi = null;
-//   PlayersPositionsInStad.forEach((PlayerPos, index) => {
-//     PlayerPos.addEventListener('click', () => {
-//       PlayersPositionsInStad.forEach(elem => {
-//         if (PlayerPos != elem) {
-//           elem.style.border = "none";
-//           PlayerPos.style.transform = "scale(1.5)"
-//         }
-//       })
-
-//       if (PlayerPos.textContent != "1" && PlayerPos.textContent != "2" && PlayerPos.innerHTML != "3" && PlayerPos.innerHTML != "4" && PlayerPos.innerHTML != "5" && PlayerPos.innerHTML != "6" && PlayerPos.innerHTML != "7" && PlayerPos.innerHTML != "8" && PlayerPos.innerHTML != "9" && PlayerPos.innerHTML != "10" && PlayerPos.innerHTML != "11") {
-//         console.log("dsfg");
-//       }
-//       AddPlayerForm.style.display = "block";
-
-
-
-
-//     })
-//     PlayerPos.style.border = 'dotted 3px yellow';
-
-//   })
-//   replacement_cards.forEach((replacement_card, index) => {
-//     replacement_card.style.border = 'dotted 3px yellow';
-
-//   })
-// }
-
-
-
-// let EditBtn = document.querySelector('.btn-edit');
-// EditBtn.addEventListener('click', function () {
-//   EditPlayer();
-// })
-
-
-
-
-
-
-
 // --------------variables initialization--------------------//
 let CurrentFormat = 0;
 let FormatOption = document.querySelector('#format');
@@ -247,11 +203,8 @@ let PlayersPositionsInStad = document.querySelectorAll('.position');
 function cleaninputs() {
   document.getElementById('p-name').value = '';
   document.getElementById('p-picture').value = '';
-  document.getElementById('nationality').value = '';
   document.getElementById('flag').value = '';
-  document.getElementById('club').value = '';
   document.getElementById('logo').value = '';
-
   document.querySelector("#select-player-position").value = 'Default';
   //player stats:
 
@@ -315,6 +268,7 @@ function assignPlayerToPosition() {
 
 //add new player:
 function TransferPlayerToPosition() {
+  console.log(replacement_cards.length);
   PlayersPositionsInStad.forEach((PlayerPos, index) => {
     if(replacement_cards.length>0)
     {
@@ -332,24 +286,6 @@ function TransferPlayerToPosition() {
     }
 
   })
-
-  // PlayersPositionsInStad.forEach((PlayerPos, index) => {
-  //   if(replacement_cards.length>0)
-  //   {
-  //     if ((arrFormat_Positions[CurrentFormat][index + 1] === replacement_cards[replacement_cards.length-1].querySelector('.player-pos').innerText) &&
-  //     (Formations[CurrentFormat][index + 1].IsOcupped === false)  
-  //   ) {
-  //     setTimeout(function () {
-  //       PlayerPos.appendChild(replacement_cards[replacement_cards.length - 1]);
-  //       Formations[CurrentFormat][index + 1].IsOcupped = true;
-  //       replacement_cards.pop();
-
-  //     }, 500)
-  //   }
-
-  //   }
-
-  // })
 
 }
 
@@ -440,12 +376,8 @@ function CreatePlayerCard() {
             <div class="stat-val ">PHY ${Player_stats_physical.value}</div>
           </div>
       `
-      console.log(PlayerCountryFlag.value);
     document.querySelector('.replacement-field').appendChild(NewCard);
     replacement_cards.push(NewCard);
-    console.log(replacement_cards.length);
-
-
     cleaninputs();
   }
 
@@ -484,6 +416,42 @@ function AddNewPlayer() {
   })
 }
 
+//edit player : 
+
+function EditPlayerInfo(player)
+{
+  console.log('in the name of god');
+  document.querySelector('.add-form').style.display='block';
+  document.getElementById('p-name').value=player.querySelector('.player-name').innerText;
+  document.getElementById('p-picture').value=player.querySelector('#player-pic').src;
+
+
+}
+function Editplayer() {
+
+  PlayersPositionsInStad.forEach((pos,index)=>{
+    if(pos.children.length>0)
+    {
+      pos.children[0].style.border='dashed 2px yellow';
+      pos.children[0].addEventListener('click',function(){
+          //im here.. :-)
+        EditPlayerInfo(pos);
+      })
+    }
+  })
+  console.log(replacement_cards.length);
+  if(replacement_cards.length>0)
+  {
+    replacement_cards.forEach((card,index)=>{
+      card.style.border='dashed 2px red';
+      card.addEventListener('click',function(){
+        replacement_cards.splice(index,1);
+        card.remove();
+      })
+    })
+  }
+
+}
 
 
 //Remove player : 
@@ -497,7 +465,6 @@ function RemovePlayer() {
       })
     }
   })
-  console.log(replacement_cards.length);
   if(replacement_cards.length>0)
   {
     replacement_cards.forEach((card,index)=>{
@@ -526,8 +493,8 @@ btnAdd.addEventListener('click', function () {
 
 let btnRemove = document.querySelector('.btn-del');
 btnRemove.addEventListener('click', function () {
-
   RemovePlayer();
+
 
 })
 

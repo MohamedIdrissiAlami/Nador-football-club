@@ -31,6 +31,7 @@ body {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 8px;
+  gap: 30px;
 }
 
 .actions div {
@@ -113,7 +114,7 @@ replacement field:
 }
 
 
-/*player card*/
+/* player card */
 
 .player-card {
   width: 120px;
@@ -230,4 +231,44 @@ input{
   text-align: center;
 }
 
-
+.form {
+  width: 100%;
+  display: flex; 
+  justify-content: space-between;
+}
+@media (max-width: 1015px) {
+  .form {
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    > div {
+      min-width: min(600px, 90%);
+      .input-container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        > input {
+          height: 35px;
+        }
+      }
+    }
+  } 
+  .actions{
+    min-width: min(510px, 90%);
+  }
+}
+@media (max-width: 600px) {
+  .actions{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    > div button, div select{
+      width: 80%;
+      text-align: center;
+    }
+  }
+  .replacement-field{
+    width: 90%;
+  }
+}
